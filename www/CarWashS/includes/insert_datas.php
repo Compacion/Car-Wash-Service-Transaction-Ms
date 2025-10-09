@@ -11,9 +11,13 @@ if (isset($_POST['submit'])) {
             VALUES ('$client_name', '$phone_number', '$plate_number', '$vehicle_type')";
 
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('✅ Client added successfully'); window.location='client.php';</script>";
+        $client_id = mysqli_insert_id($conn);
+        // Redirect to booking page to choose service for this client
+        header('Location: book_service.php?client_id=' . intval($client_id));
+        exit;
     } else {
-        echo "❌ Error: " . mysqli_error($conn);
+        header('Location: client.php?error=sql');
+        exit;
     }
 }
 ?>
