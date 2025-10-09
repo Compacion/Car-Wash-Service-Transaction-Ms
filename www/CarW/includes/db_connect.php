@@ -2,7 +2,7 @@
 $servername = "mysql";
 $username = "root";
 $password = "root";
-$database = "carwashservice_id";
+$database = "carwashservice_db";
 
 $conn = mysqli_connect($servername, $username, $password, $database);
 
