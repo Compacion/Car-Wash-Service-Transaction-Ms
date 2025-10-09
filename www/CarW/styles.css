@@ -1,0 +1,239 @@
+/*stylesheet for background*/
+body {
+  background-color: rgba(0, 0, 0, 0.5);
+  color:white;
+  padding: 50px;
+} 
+
+/*stylesheet for About Me */ 
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.darker {
+  font-size: 90%;
+  color: #5A5A5A;
+}
+.dark {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: white;
+}
+/* stylesheet for Menu Bar */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#navigation {
+  width: 100%;
+  background-color: #1c1c1c;
+  color: #fff;
+  padding: 25px 100px;
+  display: flex;
+  justify-content: space-between;
+}
+#navigation .sample{
+  font-size: 35px;
+  color: #a0c0ca;
+}
+#navigation .sample b {
+    color: red;
+}
+#navigation ul {
+  list-style: none;
+  gap: 100px;
+  display: flex;
+}
+#navigation ul li {
+  position: relative;
+}
+#navigation ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  transition: 0.3 ease;
+}
+#navigation ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #3399cc;
+  transition: 0.3s ease;
+}
+#navigation ul li a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: #3399cc;
+  transition: 0.3 ease;
+}
+#navigation ul li a:hover {
+  color: #3399cc;
+}
+#navigation ul li a:hover::before {
+  width: 100%;
+}
+ 
+/*For Table*/
+/* Initial style for the text */
+.fade-text {
+  font-size: 2em;
+  text-align: center;
+  opacity: 1;
+  animation: fadeOut 2s forwards; 
+}
+
+/* The keyframes for the animation */
+@keyframes fadeOut {
+  0% {
+    opacity: 1; /* Fully visible at the start */
+  }
+  100% {
+    opacity: 0; /* Invisible at the end */
+  }
+} 
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], input[type="number"] {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+input[type="submit"] {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background: #333;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: rgb(31, 30, 30);
+    box-shadow: 0px 0px 10px gray;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #333;
+    color: white;
+}
+
+/* stylesheet for socmed*/
+.hi {
+background-color: #1c1c1c;
+color: white;
+padding: 14px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.3s ease;
+margin: 10px;
+width: 200px;
+height: 50px;
+}
+.hi:hover {
+background-color: #3399cc;
+}
+.hi:active {
+background-color: lightblue;
+transform: translateY(2px);
+}
+.hi a {
+text-decoration: none;
+color: white;
+}
+.hello {
+background: linear-gradient(45deg, #6adeg, #2575fc);
+color: white;
+padding: 14px 30px;
+border: none;
+border-radius: 50px;
+font-size:18px;
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+transition: transform 0.3 ease, box-shadow 0.3 ease;
+}
+
+.hello:hover {
+transform: translateY(-5px);
+box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+}
+.hello:active {
+transform: translateY(2px);
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.hello:focus {
+outline: none;
+animation: pulse 1s infinite;
+}
+.hello a {
+text-decoration: none;
+color: black;
+}
+
+
+/*stylesheet for contact*/ 
+form {
+width: 50%;
+margin: 50px auto;
+padding: 20px;
+background-color: linear-gradient(145deg, #ff6f61, #ff3d2e);
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+label {
+display: block;
+margin-bottom: 10px;
+font-size: 16px;
+color: white;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+width: 100%;
+padding: 12px;
+border-radius: 4px;
+border: 1px solid #ddd;
+margin: 20px;
+}
+textarea {
+height: 120px;
+}
+.form {
+overflow: hidden;
+}
+a {
+text-decoration: none;
+color: white;
+}
