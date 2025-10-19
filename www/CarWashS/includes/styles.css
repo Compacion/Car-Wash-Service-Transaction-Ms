@@ -50,3 +50,9 @@ input[type=text], input[type=tel]{width:100%;padding:10px;border-radius:8px;bord
 
 /* helper for connected message printed by db_connect.php */
 .fade-text{font-size:0.95rem;color:var(--accent-2);padding:6px 20px}
+
+/* make the 'Car Wash' text inside .sample bold */
+.sample b {
+  color: red;
+  font-weight: bold;
+}
