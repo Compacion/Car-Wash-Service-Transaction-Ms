@@ -1,7 +1,5 @@
-<?php
-// Header include for CarWashS - place this near the top of pages in the CarWashS folder:
-// <?php include __DIR__ . '/includes/header.php'; ?>
-?>
+<!-- Header include for CarWashS - include this file from pages in the CarWashS folder:
+  <?php include __DIR__ . '/header.php'; ?> -->
 <nav class="site-header" id="siteHeader">
   <div class="nav-inner">
     <div class="nav-left" style="display:flex;align-items:center;gap:12px">
@@ -11,7 +9,7 @@
       </button>
 
       <a href="/" class="site-title nav-brand" aria-label="Home">
-        <span class="brand">CarWashS</span>
+        <span class="brand">The Crew Car Wash</span>
       </a>
     </div>
 

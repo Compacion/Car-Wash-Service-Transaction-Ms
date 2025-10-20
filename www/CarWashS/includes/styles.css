@@ -45,6 +45,10 @@ input[type=text], input[type=number]{width:100%;padding:10px;border-radius:8px;b
   .panel{padding:14px}
 }
 
+/* Wider centered layout for Services page */
+.container.services{max-width:1200px;grid-template-columns:420px 1fr}
+.container.services .panel{padding:20px}
+
 /* misc */
 .muted{color:var(--muted)}
 
@@ -82,34 +86,31 @@ input[type=text], input[type=number]{width:100%;padding:10px;border-radius:8px;b
   .container{padding:12px}
 }
 
-/* Navigation: user menu, search and focus styles */
-.nav-search input{
-  width:220px;max-width:30vw;padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#eaf6f8
+/* Service form specific styles */
+.service-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.02);
+  color: #eaf6f8;
+  font-size: 0.95rem;
+  resize: vertical;
+  min-height: 80px;
 }
 
-.user-avatar{width:36px;height:36px;border-radius:999px;border:1px solid rgba(255,255,255,0.04);display:block}
-.user-toggle{background:transparent;border:0;padding:4px;cursor:pointer}
-
-.user-menu{position:absolute;right:0;top:48px;background:var(--card-bg);min-width:160px;border-radius:8px;padding:8px;box-shadow:0 8px 20px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.02)}
-.user-menu a{display:block;padding:8px 10px;color:#eaf6f8;text-decoration:none;border-radius:6px}
-.user-menu a:hover{background:rgba(255,255,255,0.02);color:var(--accent)}
-
-/* small ARIA-only text for screen readers */
-.sr-only{
-  position:absolute!important;
-  height:1px;width:1px;overflow:hidden;
-  clip:rect(1px,1px,1px,1px);
-  white-space:nowrap;border:0;padding:0;margin:-1px;
+.service-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(122,208,230,0.1);
 }
 
-/* focus ring for keyboard users */
-a:focus, button:focus, input:focus{
-  outline:3px solid rgba(122,208,230,0.18);
-  outline-offset:2px;
+.service-form input[type="number"] {
+  -moz-appearance: textfield;
 }
 
-/* ensure nav-search hidden on narrow screens (existing mobile rules already handle nav) */
-@media (max-width:900px){
-  .nav-search{display:none}
-  .nav-right{gap:8px}
+.service-form input[type="number"]::-webkit-outer-spin-button,
+.service-form input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

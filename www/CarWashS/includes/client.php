@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Car Wash Service</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="styles.css">
+        <title>Car Wash Service</title>
+                <meta charset="UTF-8">
+                <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header id="navigation" class="site-header">
-  <div class="nav-inner">
-    <h1 class="site-title">The Crew <b class="brand">Car Wash</b></h1>
+    <div class="nav-inner">
+        <h1 class="site-title">The Crew <b class="brand">Car Wash</b></h1>
 
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">
-      <span class="hamburger" aria-hidden="true"></span>
-    </button>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">
+            <span class="hamburger" aria-hidden="true"></span>
+        </button>
 
-    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="homepage.php">Home</a></li>
-        <li><a href="client.php" class="active" title="Client data">Client</a></li>
-        <li><a href="staff.php" title="Staff data">Staff</a></li>
-      </ul>
-    </nav>
-  </div>
+        <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="homepage.php">Services</a></li>
+                <li><a href="client.php" class="active" title="Client data">Client</a></li>
+                <li><a href="staff.php" title="Staff data">Staff</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
-        <div class="container">
+                <div class="container">
             <section class="panel form-card">
                 <h2>New Client</h2>
                 <p class="muted">Add client details for the car wash.</p>
@@ -106,6 +106,7 @@ echo "</div>"; // close table-wrap
 echo "</section></div>"; // close panel + container
 mysqli_close($conn);
 ?>
-<script src="carw.js"></script>
+</body>
+</html>
 </body>
 </html>

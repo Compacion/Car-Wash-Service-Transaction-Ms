@@ -16,7 +16,7 @@
 
     <nav id="mainNav" class="main-nav" aria-label="Main navigation">
       <ul>
-        <li><a href="homepage.php">Home</a></li>
+        <li><a href="homepage.php">Services</a></li>
         <li><a href="client.php" title="Client data">Client</a></li>
         <li><a href="staff.php" class="active" title="Staff data">Staff</a></li>
       </ul>
