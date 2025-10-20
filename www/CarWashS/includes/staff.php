@@ -6,15 +6,23 @@
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
-<body>
-  <div id="navigation">
-    <h1 class="sample">The Crew <b>Car Wash</b></h1>
-    <ul>
-      <li><a href="homepage.php">Home</a></li>
-      <li><a href="client.php">Client</a></li>
-      <li><a class="active" href="staff.php">Staff</a></li>
-    </ul>
+<header id="navigation" class="site-header">
+  <div class="nav-inner">
+    <h1 class="site-title">The Crew <b class="brand">Car Wash</b></h1>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
+
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="homepage.php">Home</a></li>
+        <li><a href="client.php" title="Client data">Client</a></li>
+        <li><a href="staff.php" class="active" title="Staff data">Staff</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
 
   <div class="container">
     <section class="panel form-card">

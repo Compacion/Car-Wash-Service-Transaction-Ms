@@ -6,14 +6,23 @@
         <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-        <div id="navigation">
-      <h1 class="sample">The Crew <b>Car Wash</b></h1>
+<header id="navigation" class="site-header">
+  <div class="nav-inner">
+    <h1 class="site-title">The Crew <b class="brand">Car Wash</b></h1>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
+
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
       <ul>
-    <li><a href="homepage.php">Home</a></li>
-    <li><a href="client.php" title="Data Here">Client</a></li>
-    <li><a href="staff.php" title ="Data Here">Staff</a></li>
-    </ul>
-    </div>
+        <li><a href="homepage.php">Home</a></li>
+        <li><a href="client.php" class="active" title="Client data">Client</a></li>
+        <li><a href="staff.php" title="Staff data">Staff</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
         <div class="container">
             <section class="panel form-card">
                 <h2>New Client</h2>
@@ -26,7 +35,7 @@
                     <input type="text" name="plate_number" required>
 
                     <label>Phone #:</label>
-                    <input type="tel" name="phone_number" required>
+                    <input type="number" name="phone_number" required>
 
                     <label>Vehicle Type:</label>
                     <input type="text" name="vehicle_type" required>
