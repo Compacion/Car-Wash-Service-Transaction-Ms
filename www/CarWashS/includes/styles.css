@@ -46,7 +46,7 @@ input[type=text], input[type=number]{width:100%;padding:10px;border-radius:8px;b
 }
 
 /* Wider centered layout for Services page */
-.container.services{max-width:1200px;grid-template-columns:420px 1fr}
+.container.services{max-width:1200px;grid-template-colum
 .container.services .panel{padding:20px}
 
 /* misc */

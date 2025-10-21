@@ -13,28 +13,22 @@
       </a>
     </div>
 
-    <div class="main-nav" id="mainNav" role="navigation" aria-label="Primary">
+    < class="main-nav" id="mainNav" role="navigation" aria-label="Primary">
       <ul>
-        <li><a href="client.php" class="active">Dashboard</a></li>
-        <li><a href="services.php">Services</a></li>
-        <li><a href="bookings.php">Bookings</a></li>
-        <li><a href="reports.php">Reports</a></li>
+        <li><a href="homepage.php" title="Choose Services Here">Services</a></li>
+        <li><a href="client.php" title="Add Client Here">Client</a></li>
+        <li><a href="staff.php" title="Add Staff Here">Staff</a></li>
       </ul>
-    </div>
-
-    <div class="nav-right" style="display:flex;align-items:center;gap:12px">
-      <div class="nav-search" role="search">
-        <input type="search" placeholder="Search bookings..." aria-label="Search bookings" />
-      </div>
+    </nav>
 
       <div class="user-block" style="position:relative">
         <button id="userBtn" class="user-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="userMenu">
           <img src="images/avatar.png" alt="User avatar" class="user-avatar" />
         </button>
         <div id="userMenu" class="user-menu" role="menu" hidden>
-          <a href="profile.php" role="menuitem">Profile</a>
-          <a href="settings.php" role="menuitem">Settings</a>
-          <a href="logout.php" role="menuitem">Sign out</a>
+          <a href="homepage.php" role="menuitem">Services</a>
+          <a href="client.php" role="menuitem">Client</a>
+          <a href="staff.php" role="menuitem">Staff</a>
         </div>
       </div>
     </div>

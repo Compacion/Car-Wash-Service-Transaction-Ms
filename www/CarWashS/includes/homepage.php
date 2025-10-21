@@ -13,10 +13,14 @@ include 'db_connect.php';
 <header id="navigation" class="site-header">
   <div class="nav-inner">
     <h1 class="site-title">The Crew <b class="brand">Car Wash</b></h1>
+    
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">
+        <span class="hamburger" aria-expanded="true"></span>
+      </button>
 
     <nav id="mainNav" class="main-nav" aria-label="Main navigation">
       <ul>
-        <li><a href="homepage.php" class="active">Services</a></li>
+        <li><a href="homepage.php">Services</a></li>
         <li><a href="client.php">Client</a></li>
         <li><a href="staff.php">Staff</a></li>
       </ul>
@@ -24,7 +28,7 @@ include 'db_connect.php';
   </div>
 </header>
 
-<div class="container services">
+<div class="container.services">
   <section class="panel table-card">
     <div class="table-header">
       <h2>Service Records</h2>

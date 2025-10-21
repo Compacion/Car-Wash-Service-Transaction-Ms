@@ -32,13 +32,13 @@ $staff = mysqli_query($conn, "SELECT * FROM staff ORDER BY staff_name");
           <?php while ($s = mysqli_fetch_assoc($services)) { echo '<option value="'. $s['service_id'] .'">'.htmlspecialchars($s['name']).' — '.number_format($s['price'],2).'</option>'; } ?>
         </select>
 
-        <label>Staff (optional)</label>
+        <label>Staff</label>
         <select name="staff_id">
           <option value="">-- any --</option>
           <?php while ($st = mysqli_fetch_assoc($staff)) { echo '<option value="'.$st['staff_id'].'">'.htmlspecialchars($st['staff_name']).'</option>'; } ?>
         </select>
 
-        <label>Schedule (optional)</label>
+        <label>Schedule</label>
         <input type="datetime-local" name="scheduled_at">
 
         <div class="form-actions"><button class="btn primary" type="submit">Book</button></div>

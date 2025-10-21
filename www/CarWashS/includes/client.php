@@ -106,7 +106,6 @@ echo "</div>"; // close table-wrap
 echo "</section></div>"; // close panel + container
 mysqli_close($conn);
 ?>
-</body>
-</html>
+<script src="carw.js"></script>
 </body>
 </html>

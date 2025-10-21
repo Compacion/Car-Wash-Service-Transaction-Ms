@@ -10,7 +10,7 @@ if (!$booking) { echo 'Booking not found'; exit; }
 <head><meta charset="utf-8"><title>Payment</title><link rel="stylesheet" href="styles.css"></head>
 <body>
   <div id="navigation"><h1 class="sample">Payment</h1></div>
-  <div class="container">
+  <div class="container" style="align-items: center; justify-content: center; display: flex; height: 50vh;">
     <section class="panel form-card">
       <h2>Payment for Booking #<?php echo $booking_id; ?></h2>
       <p>Client: <?php echo htmlspecialchars($booking['client_name']); ?></p>
@@ -18,7 +18,7 @@ if (!$booking) { echo 'Booking not found'; exit; }
       <form method="post" action="insert_payment.php">
         <input type="hidden" name="booking_id" value="<?php echo $booking_id; ?>">
         <label>Amount</label>
-        <input type="text" name="amount" value="<?php echo number_format($booking['price'],2); ?>">
+        <input type="number" name="amount" value="<?php echo number_format($booking['price'],2); ?>">
         <label>Method</label>
         <select name="method"><option value="cash">Cash</option><option value="card">Card</option></select>
         <div class="form-actions"><button class="btn primary" type="submit">Pay</button></div>

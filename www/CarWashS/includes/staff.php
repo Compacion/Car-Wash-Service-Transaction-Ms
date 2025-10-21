@@ -34,9 +34,6 @@
         <label>Role</label>
         <input type="text" name="role" placeholder="e.g., washer, cashier">
 
-        <label>Phone</label>
-        <input type="tel" name="phone">
-
         <div class="form-actions">
           <button class="btn primary" type="submit">Add</button>
           <button class="btn ghost" type="reset">Clear</button>
