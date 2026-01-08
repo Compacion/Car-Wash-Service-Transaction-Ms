@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `bookings`
 --
-
+DROP TABLE IF EXISTS `bookings`;
 CREATE TABLE `bookings` (
   `booking_id` int NOT NULL,
   `client_id` int NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE `bookings` (
   `scheduled_at` datetime DEFAULT NULL,
   `status` varchar(32) DEFAULT 'booked',
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `bookings`
@@ -51,7 +51,7 @@ INSERT INTO `bookings` (`booking_id`, `client_id`, `service_id`, `staff_id`, `sc
 --
 -- Table structure for table `client`
 --
-
+DROP TABLE IF EXISTS `client`;
 CREATE TABLE `client` (
   `client_id` int NOT NULL,
   `client_name` varchar(255) NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE `client` (
   `plate_number` varchar(64) DEFAULT NULL,
   `vehicle_type` varchar(64) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `client`
@@ -77,20 +77,20 @@ INSERT INTO `client` (`client_id`, `client_name`, `phone_number`, `plate_number`
 --
 -- Table structure for table `payments`
 --
-
+DROP TABLE IF EXISTS `payments`;
 CREATE TABLE `payments` (
   `payment_id` int NOT NULL,
   `booking_id` int NOT NULL,
   `amount` decimal(10,2) NOT NULL DEFAULT '0.00',
   `method` varchar(64) DEFAULT 'cash',
-  `paid_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `pgenerald_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `payments`
 --
 
-INSERT INTO `payments` (`payment_id`, `booking_id`, `amount`, `method`, `paid_at`) VALUES
+INSERT INTO `payments` (`payment_id`, `booking_id`, `amount`, `method`, `pgenerald_at`) VALUES
 (1, 1, 50.00, 'cash', '2025-10-09 07:45:17'),
 (2, 2, 120.00, 'cash', '2025-10-09 07:50:10'),
 (3, 3, 120.00, 'card', '2025-10-19 16:17:07');
@@ -100,7 +100,7 @@ INSERT INTO `payments` (`payment_id`, `booking_id`, `amount`, `method`, `paid_at
 --
 -- Table structure for table `services`
 --
-
+DROP TABLE IF EXISTS `services`;
 CREATE TABLE `services` (
   `service_id` int NOT NULL,
   `name` varchar(128) NOT NULL,
@@ -108,7 +108,7 @@ CREATE TABLE `services` (
   `price` decimal(10,2) NOT NULL DEFAULT '0.00',
   `duration_minutes` int DEFAULT '30',
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `services`
@@ -124,14 +124,14 @@ INSERT INTO `services` (`service_id`, `name`, `description`, `price`, `duration_
 --
 -- Table structure for table `staff`
 --
-
+DROP TABLE IF EXISTS `staff`;
 CREATE TABLE `staff` (
   `staff_id` int NOT NULL,
   `staff_name` varchar(255) NOT NULL,
   `role` varchar(128) DEFAULT 'staff',
   `phone` varchar(32) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `staff`
@@ -214,11 +214,11 @@ ALTER TABLE `staff`
   MODIFY `staff_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- CONSTRAINTs for dumped tables
 --
 
 --
--- Constraints for table `bookings`
+-- CONSTRAINTs for table `bookings`
 --
 ALTER TABLE `bookings`
   ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`) ON DELETE CASCADE,
@@ -226,7 +226,7 @@ ALTER TABLE `bookings`
   ADD CONSTRAINT `bookings_ibfk_3` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`) ON DELETE SET NULL;
 
 --
--- Constraints for table `payments`
+-- CONSTRAINTs for table `payments`
 --
 ALTER TABLE `payments`
   ADD CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`booking_id`) REFERENCES `bookings` (`booking_id`) ON DELETE CASCADE;
