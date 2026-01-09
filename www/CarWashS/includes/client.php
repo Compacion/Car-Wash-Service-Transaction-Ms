@@ -38,7 +38,15 @@
                     <input type="number" name="phone_number" required>
 
                     <label>Vehicle Type:</label>
-                    <input type="text" name="vehicle_type" required>
+                    <select name="vehicle_type" required>
+                        <option value="">-- Select vehicle --</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Truck">Truck</option>
+                        <option value="Van">Van</option>
+                        <option value="Motorcycle">Motorcycle</option>
+                        <option value="Other">Other</option>
+                    </select>
 
                     <div class="form-actions">
                         <button type="submit" name="submit" class="btn primary">Save</button>
