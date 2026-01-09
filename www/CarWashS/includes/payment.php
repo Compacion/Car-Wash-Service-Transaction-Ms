@@ -5,25 +5,58 @@ if (!$booking_id) { echo 'Invalid booking id'; exit; }
 $booking = mysqli_fetch_assoc(mysqli_query($conn, "SELECT b.*, c.client_name, s.name AS service_name, s.price FROM bookings b JOIN client c ON b.client_id=c.client_id JOIN services s ON b.service_id=s.service_id WHERE b.booking_id=".$booking_id));
 if (!$booking) { echo 'Booking not found'; exit; }
 ?>
-<!doctype html>
-<html>
-<head><meta charset="utf-8"><title>Payment</title><link rel="stylesheet" href="styles.css"></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - The Crew Car Wash</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-  <div id="navigation"><h1 class="sample">Payment</h1></div>
-  <div class="container" style="align-items: center; justify-content: center; display: flex; height: 50vh;">
-    <section class="panel form-card">
-      <h2>Payment for Booking #<?php echo $booking_id; ?></h2>
-      <p>Client: <?php echo htmlspecialchars($booking['client_name']); ?></p>
-      <p>Service: <?php echo htmlspecialchars($booking['service_name']); ?> — <?php echo number_format($booking['price'],2); ?></p>
-      <form method="post" action="insert_payment.php">
-        <input type="hidden" name="booking_id" value="<?php echo $booking_id; ?>">
-        <label>Amount</label>
-        <input type="number" name="amount" value="<?php echo number_format($booking['price'],2); ?>">
-        <label>Method</label>
-        <select name="method"><option value="cash">Cash</option><option value="card">Card</option></select>
-        <div class="form-actions"><button class="btn primary" type="submit">Pay</button></div>
-      </form>
-    </section>
-  </div>
+  <?php include 'navigation.php'; ?>
+
+  <main class="main-content">
+    <div class="dashboard-header">
+      <div class="header-content">
+        <h1>Payment</h1>
+        <p class="header-subtitle">Complete payment for booking #<?php echo $booking_id; ?></p>
+      </div>
+    </div>
+
+    <div class="container" style="justify-content: center;">
+      <section class="panel form-card" style="max-width: 500px;">
+        <h2>Payment Details</h2>
+        
+        <div style="background: rgba(51, 153, 204, 0.1); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem; border-left: 4px solid var(--accent);">
+          <p style="margin: 0.5rem 0;"><strong>Client:</strong> <?php echo htmlspecialchars($booking['client_name']); ?></p>
+          <p style="margin: 0.5rem 0;"><strong>Service:</strong> <?php echo htmlspecialchars($booking['service_name']); ?></p>
+          <p style="margin: 0.5rem 0; font-size: 1.25rem; color: var(--accent-2);"><strong>Amount: $<?php echo number_format($booking['price'], 2); ?></strong></p>
+        </div>
+
+        <form method="post" action="insert_payment.php">
+          <input type="hidden" name="booking_id" value="<?php echo $booking_id; ?>">
+          
+          <label>Amount to Pay</label>
+          <input type="number" name="amount" step="0.01" value="<?php echo number_format($booking['price'], 2); ?>" required>
+
+          <label>Payment Method</label>
+          <select name="method" required style="width: 100%; padding: 0.6rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); border-radius: 0.5rem; color: #eaf6f8; margin-top: 0.5rem;">
+            <option value="cash">💵 Cash</option>
+            <option value="card">💳 Card</option>
+            <option value="check">✓ Check</option>
+            <option value="other">Other</option>
+          </select>
+
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Complete Payment</button>
+            <a href="book_service.php" class="btn ghost">Cancel</a>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script src="carw.js"></script>
 </body>
 </html>
