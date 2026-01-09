@@ -35,7 +35,7 @@ CREATE TABLE `bookings` (
   `scheduled_at` datetime DEFAULT NULL,
   `status` varchar(32) DEFAULT 'booked',
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `bookings`
@@ -59,7 +59,7 @@ CREATE TABLE `client` (
   `plate_number` varchar(64) DEFAULT NULL,
   `vehicle_type` varchar(64) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `client`
@@ -84,7 +84,7 @@ CREATE TABLE `payments` (
   `amount` decimal(10,2) NOT NULL DEFAULT '0.00',
   `method` varchar(64) DEFAULT 'cash',
   `paid_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `payments`
@@ -108,7 +108,7 @@ CREATE TABLE `services` (
   `price` decimal(10,2) NOT NULL DEFAULT '0.00',
   `duration_minutes` int DEFAULT '30',
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `services`
@@ -131,7 +131,7 @@ CREATE TABLE `staff` (
   `role` varchar(128) DEFAULT 'staff',
   `phone` varchar(32) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `staff`
