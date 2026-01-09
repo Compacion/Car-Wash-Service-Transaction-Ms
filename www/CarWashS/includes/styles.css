@@ -114,3 +114,9 @@ input[type=text], input[type=number]{width:100%;padding:10px;border-radius:8px;b
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* Dashboard tiles */
+.dashboard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:6px}
+.dash-tile{background:rgba(255,255,255,0.02);padding:12px;border-radius:8px;text-align:center}
+.dash-tile h3{margin:6px 0 0 0;font-size:0.9rem;color:var(--muted)}
+.dash-tile .big{font-size:1.8rem;font-weight:800;color:var(--accent-2);margin:8px 0}
