@@ -57,9 +57,20 @@ if ($res && mysqli_num_rows($res) > 0) {
     </div>
   </section>
 
+  <section class="panel dashboard-card">
+    <div class="table-header">
+      <h2>Dashboard Overview</h2>
+      <div class="table-actions"><a class="btn ghost" href="client.php">Manage Clients</a> <a class="btn ghost" href="homepage.php">Services</a> <a class="btn ghost" href="staff.php">Staff</a> <a class="btn ghost" href="bookings.php">Bookings</a> <a class="btn ghost" href="payment_list.php">Payments</a></div>
+    </div>
+    <div class="table-wrap dashboard-grid">
+<?php
+$tables = ['client' => 'Clients', 'services' => 'Services', 'staff' => 'Staff', 'bookings' => 'Bookings', 'payments' => 'Payments'];
+foreach ($tables as $tbl => $label) {
+  $r = mysqli_query($conn, "SELECT COUNT(*) as cnt FROM `$tbl`");
+  $c = $r ? mysqli_fetch_assoc($r)['cnt'] : 0;
+  echo "<div class=\"dash-tile\"><h3>$label</h3><p class=\"big\">".intval($c)."</p></div>";
+}
+?>
+    </div>
   </section>
-</div>
 
-<script src="carw.js"></script>
-</body>
-</html>
