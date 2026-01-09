@@ -12,6 +12,7 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -83,14 +84,14 @@ CREATE TABLE `payments` (
   `booking_id` int NOT NULL,
   `amount` decimal(10,2) NOT NULL DEFAULT '0.00',
   `method` varchar(64) DEFAULT 'cash',
-  `pgenerald_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  `paid_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `payments`
 --
 
-INSERT INTO `payments` (`payment_id`, `booking_id`, `amount`, `method`, `pgenerald_at`) VALUES
+INSERT INTO `payments` (`payment_id`, `booking_id`, `amount`, `method`, `paid_at`) VALUES
 (1, 1, 50.00, 'cash', '2025-10-09 07:45:17'),
 (2, 2, 120.00, 'cash', '2025-10-09 07:50:10'),
 (3, 3, 120.00, 'card', '2025-10-19 16:17:07');
